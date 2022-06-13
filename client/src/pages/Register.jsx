@@ -76,7 +76,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try{
-      const url = "/api/auth/register"
+      const url = "https://caephas-ecommerce.herokuapp.com/api/auth/register"
       const {data:res} = await axiosInstance.post(url,data)
       navigate("/Login")
       console.log(res.message)

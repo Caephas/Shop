@@ -87,7 +87,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try{
-      const url = "/api/auth/login"
+      const url = "https://caephas-ecommerce.herokuapp.com/api/auth/login"
       const {data:res} = await axiosInstance.post(url,data)
       localStorage.setItem("token", res.data)
       window.location = "/"
