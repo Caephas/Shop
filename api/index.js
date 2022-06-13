@@ -32,7 +32,8 @@ __dirname = path.resolve()
 if (process.env.PORT || 5000) {
     app.use(express.static(path.join(__dirname, "../client/build")))
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client', 'build', 'index.html'))
+        const index = path.join(__dirname, "../client/", "build", "index.html")
+        res.sendFile(index)
         // console.log(res)
     })
 } else {
