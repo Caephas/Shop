@@ -29,7 +29,7 @@ app.use("/api/orders", orderRoute);
 // app.use("/api/checkout", stripeRoute);
 
 __dirname = path.resolve()
-if (process.env.PORT === 5000) {
+if (process.env.PORT === 'production') {
     app.use(express.static(path.join(__dirname, "../client/build")))
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '../client', 'build', 'index.html'))
@@ -41,6 +41,8 @@ if (process.env.PORT === 5000) {
     })
 }
 
-app.listen(process.env.PORT || 5000, () => {
-    console.log("Backend server is running!");
-});
+
+
+// app.listen(process.env.PORT || 5000, () => {
+//     console.log("Backend server is running!");
+// });
