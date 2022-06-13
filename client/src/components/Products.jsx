@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { popularProducts } from "../data";
 import Product from "./Product";
-import {axiosInstance } from "../../src/config";
+import { axiosInstance } from "../../src/config";
 
 const Container = styled.div`
   padding: 20px;
@@ -20,8 +20,8 @@ const Products = ({ cat, filters, sort }) => {
             try {
                 const res = await axiosInstance.get(
                     cat
-                        ? `http://localhost:5000/api/products?category=${cat}`
-                        : "http://localhost:5000/api/products"
+                        ? `https://caephas-ecommerce.herokuapp.com/api/products?category=${cat}`
+                        : "https://caephas-ecommerce.herokuapp.com/api/products"
                 );
                 setProducts(res.data);
             } catch (err) { }
