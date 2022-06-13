@@ -29,7 +29,7 @@ app.use("/api/orders", orderRoute);
 // app.use("/api/checkout", stripeRoute);
 
 __dirname = path.resolve()
-if (process.env.PORT === 5000) {
+if (process.env.PORT || 5000) {
     app.use(express.static(path.join(__dirname, "../client/build")))
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '../client', 'build', 'index.html'))
